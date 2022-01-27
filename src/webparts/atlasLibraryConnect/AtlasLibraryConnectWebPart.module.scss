@@ -1,0 +1,129 @@
+@import "~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss";
+
+// @media only screen and (max-width: 766px) {
+//   .view .connectHeader div.pageImage {
+//     top: -4.9em;
+//   }
+
+//   h1 {
+//     font-size: small;
+//   }
+//   .pageImage {
+//     height: 700px;
+//   }
+// }
+// @media only screen and (max-width: 766px) {
+//   .view .connectHeader .pageImage {
+//     z-index: 0;
+//   }
+
+//   .pageImage {
+//     height: 300px;
+//   }
+// }
+@media only screen and (max-width: 1026px) {
+  .atlasLibraryConnect {
+    background-color: red;
+  }
+  .pageImage {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .callToAction {
+    margin-top: 5% !important;
+    width: 50% !important;
+    padding: 0.25em 0.5em 0.25em 5% !important;
+    font-size: 25px !important;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .callToAction {
+    margin-top: 5% !important;
+    padding: 0.25em 0.5em 0.25em 5% !important;
+    font-size: 22px !important;
+  }
+}
+
+.atlasLibraryConnect {
+  .pageImage {
+    // max-height: 12.8em;
+    // max-width: 500px;
+    // width:120%;
+    //height:287px;
+    width: 50%;
+    margin-left: 25%;
+    height: 110px;
+    // height: 13em;
+    //  // overflow: hidden;
+    //   position: relative;
+    //   top: -7.9em;
+    //   top: -6.5em;
+    //   z-index: -1;
+    // min-height: 13em;
+    background: linear-gradient(to top, rgba(204, 10, 10, 1) 0%, rgba(150, 6, 6, 1) 50%, rgba(97, 2, 2, 1) 70%);
+  }
+  .callToAction {
+    display: block;
+    font-family: "Oswald" !important;
+    float: left;
+    overflow-wrap: break-word;
+    width: 30%;
+    position: absolute;
+    background: rgba(51, 51, 51, 0.75);
+    margin-top: 0.9em;
+    //vertical-align: middle;
+    text-align: left;
+    text-decoration: none;
+    font-size: 29.9px;
+    padding: 0.25em 0.5em 0.25em calc(2% + 0em);
+    color: #ffffff;
+    //text-transform: uppercase;
+  }
+
+  //   span {
+  //     padding: 20px 90px 20px 1.75em;
+  //     background-color: rgba(51,51,51,0.75);
+  //     color: #fff;
+  //     font-family: "Oswald";
+  //     display: inline-block;
+  //     top: 1em;
+  //     position: relative;
+  // }
+
+  // .callToAction {
+  //   display: block;
+  //   float: left;
+  //   background: rgba(51, 51, 51, 0.75);
+  //   margin-top: 2.25em;
+  //   //vertical-align: middle;
+  //   text-align: right;
+  //   font-size: 3em;
+  //   padding: 0.25em 0.5em 0.25em calc(10% + 2em);
+  //   color: #424242;
+  //   text-transform: uppercase;
+  //   font-family: "Oswald" !important;
+  //   font-size: 14px;
+  // }
+
+  // .callToAction:hover {
+  //   text-decoration: none;
+  //   color: #cc0a0a;
+  //   background-color: rgba(255, 255, 255, 0.8);
+  // }
+
+  // i {
+  //   margin-left: 0.35em;
+  //   font-size: 1.1em;
+  //   color: #cc0a0a;
+  // }
+
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+}
