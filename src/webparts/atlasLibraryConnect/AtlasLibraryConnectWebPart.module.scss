@@ -21,9 +21,14 @@
 //     height: 300px;
 //   }
 // }
+:global(#SuiteNavWrapper){
+  display: none !important;
+}
 @media only screen and (max-width: 1026px) {
   .atlasLibraryConnect {
-    background-color: red;
+    // background-color: red;
+    background-color: white;
+
   }
   .pageImage {
     margin-left: 0 !important;

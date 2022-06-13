@@ -14,7 +14,11 @@
     "@microsoft/sp-office-ui-fabric-core": "1.13.1",
     "@microsoft/sp-property-pane": "1.13.1",
     "@microsoft/sp-webpart-base": "1.13.1",
-    "@pnp/spfx-property-controls": "3.3.0"
+    "@pnp/spfx-property-controls": "3.3.0",
+    "@pnp/common": "^2.11.0",
+    "@pnp/logging": "^2.11.0",
+    "@pnp/odata": "^2.11.0",
+    "@pnp/sp": "^2.11.0"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.13.1",

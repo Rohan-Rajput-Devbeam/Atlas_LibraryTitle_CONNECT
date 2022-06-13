@@ -1,7 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "atlas-library-connect-client-side-solution",
+   
+    "name": "atlas-banner-connect-client-side-solution",
+
     "id": "a90c3883-b379-44c6-be00-a60b2ecfc719",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -16,6 +18,6 @@
     }
   },
   "paths": {
-    "zippedPackage": "solution/atlas-library-connect.sppkg"
+    "zippedPackage": "solution/Atlas_Banner_Connect.sppkg"
   }
 }
