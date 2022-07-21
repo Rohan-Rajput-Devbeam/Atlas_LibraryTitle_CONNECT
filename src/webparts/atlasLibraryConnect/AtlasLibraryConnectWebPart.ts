@@ -33,21 +33,21 @@ export interface IAtlasLibraryConnectWebPartProps {
   LangEnglish: any;
   LangChinese: any;
   LangGerman: any;
-  LangEspanol: any;
-  LangFrancais: any;
-  LangPolski: any;
+  LangSpanish: any;
+  LangFrench: any;
+  LangPolish: any;
   LangJapanese: any;
-  LangPortugues: any;
+  LangPortuguese: any;
   LangRussian: any;
 
   EnglishText: any;
   ChineseText: any;
   GermanText: any;
-  EspanolText: any;
-  FrancaisText: any;
-  PolskiText: any;
+  SpanishText: any;
+  FrenchText: any;
+  PolishText: any;
   JapaneseText: any;
-  PortuguesText: any;
+  PortugueseText: any;
   RussianText: any;
 }
 
@@ -126,17 +126,17 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
     // }
 
 
-    //---->>Set User Language based on user preference .....
-    // var userEmail = this.context.pageContext.user.email;
-    // this.context.spHttpClient.get(`${siteUrl}/_api/web/lists/getbytitle('Preference')/Items?&$filter=Title eq '${userEmail}'`,
-    //   SPHttpClient.configurations.v1)
-    //   .then((response: SPHttpClientResponse) => {
-    //     response.json().then((responseJSON: any) => {
-    //       // console.log(responseJSON.value);
-    //       var prefLanguage = responseJSON.value.map(function (obj: { Language: any; }) {
-    //         return obj.Language;
-    //       });
-    //       console.log(prefLanguage)
+    // ---->>Set User Language based on user preference .....
+    var userEmail = this.context.pageContext.user.email;
+    this.context.spHttpClient.get(`${siteUrl}/_api/web/lists/getbytitle('Preference')/Items?&$filter=Title eq '${userEmail}'`,
+      SPHttpClient.configurations.v1)
+      .then((response: SPHttpClientResponse) => {
+        response.json().then((responseJSON: any) => {
+          // console.log(responseJSON.value);
+          var prefLanguage = responseJSON.value.map(function (obj: { Language: any; }) {
+            return obj.Language;
+          });
+          console.log(prefLanguage)
 
 
 
@@ -157,7 +157,27 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
     background-size:cover;
     background-position: center;">
       <div class="${styles.callToAction}">
-      ${escape(this.properties.PageTitle)}
+      ${prefLanguage[0].includes("English") && this.properties.LangEnglish == true ?
+      this.properties.EnglishText :
+      prefLanguage[0].includes("Chinese") && this.properties.LangChinese == true ?
+        this.properties.ChineseText :
+        prefLanguage[0].includes("German") && this.properties.LangGerman == true ?
+          this.properties.GermanText :
+          prefLanguage[0].includes("Spanish") && this.properties.LangSpanish == true ?
+            this.properties.SpanishText :
+            prefLanguage[0].includes("French") && this.properties.LangFrench == true ?
+              this.properties.FrenchText :
+              prefLanguage[0].includes("Polish") && this.properties.LangPolish == true ?
+                this.properties.PolishText :
+                prefLanguage[0].includes("Japanese") && this.properties.LangJapanese == true ?
+                  this.properties.JapaneseText :
+                  prefLanguage[0].includes("Portuguese") && this.properties.LangPortuguese == true ?
+                    this.properties.PortugueseText :
+                    prefLanguage[0].includes("Russian") && this.properties.LangRussian == true ?
+                      this.properties.RussianText :
+                      `${escape(this.properties.PageTitle)}`
+
+    }
 
 
       
@@ -179,7 +199,27 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
       <div class="${styles.atlasLibraryConnect}">
         <div class="${styles.pageImage}">
         <div class="${styles.callToAction}">
-        ${escape(this.properties.PageTitle)}
+        ${prefLanguage[0].includes("English") && this.properties.LangEnglish == true ?
+        this.properties.EnglishText :
+        prefLanguage[0].includes("Chinese") && this.properties.LangChinese == true ?
+          this.properties.ChineseText :
+          prefLanguage[0].includes("German") && this.properties.LangGerman == true ?
+            this.properties.GermanText :
+            prefLanguage[0].includes("Spanish") && this.properties.LangSpanish == true ?
+              this.properties.SpanishText :
+              prefLanguage[0].includes("French") && this.properties.LangFrench == true ?
+                this.properties.FrenchText :
+                prefLanguage[0].includes("Polish") && this.properties.LangPolish == true ?
+                  this.properties.PolishText :
+                  prefLanguage[0].includes("Japanese") && this.properties.LangJapanese == true ?
+                    this.properties.JapaneseText :
+                    prefLanguage[0].includes("Portuguese") && this.properties.LangPortuguese == true ?
+                      this.properties.PortugueseText :
+                      prefLanguage[0].includes("Russian") && this.properties.LangRussian == true ?
+                        this.properties.RussianText :
+                        `${escape(this.properties.PageTitle)}`
+
+      }
         
        
 
@@ -191,6 +231,9 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
 
 
           }
+
+        })
+      });
 
 
 
@@ -253,30 +296,30 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
       GermanProperty = ""
     };
     ////////////////////////////////////////////////////////////
-    if (this.properties.LangEspanol == true) {
-      EspanolProperty = PropertyPaneTextField('EspanolText', {
+    if (this.properties.LangSpanish == true) {
+      EspanolProperty = PropertyPaneTextField('PolishText', {
         label: "",
-        value: this.properties.EspanolText
+        value: this.properties.PolishText
       })
     }
     else {
       EspanolProperty = ""
     };
     ////////////////////////////////////////////////////////////
-    if (this.properties.LangFrancais == true) {
-      FrancaisProperty = PropertyPaneTextField('FrancaisText', {
+    if (this.properties.LangFrench == true) {
+      FrancaisProperty = PropertyPaneTextField('FrenchText', {
         label: "",
-        value: this.properties.FrancaisText
+        value: this.properties.FrenchText
       })
     }
     else {
       FrancaisProperty = ""
     };
     ///////////////////////////////////////////////////////////////
-    if (this.properties.LangPolski == true) {
-      PolskiProperty = PropertyPaneTextField('PolskiText', {
+    if (this.properties.LangPolish == true) {
+      PolskiProperty = PropertyPaneTextField('PolishText', {
         label: "",
-        value: this.properties.PolskiText
+        value: this.properties.PolishText
       })
     }
     else {
@@ -293,10 +336,10 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
       JapaneseProperty = ""
     };
     /////////////////////////////////////////////////////////////
-    if (this.properties.LangPortugues == true) {
-      PortuguesProperty = PropertyPaneTextField('PortuguesText', {
+    if (this.properties.LangPortuguese == true) {
+      PortuguesProperty = PropertyPaneTextField('PortugueseText', {
         label: "",
-        value: this.properties.PortuguesText
+        value: this.properties.PortugueseText
       })
     }
     else {
@@ -330,60 +373,60 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
                   label: "Page Title",
                   value: this.properties.PageTitle,
                 }),
-                // PropertyPaneCheckbox('LangEnglish', {
-                //   text: "English",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // EnglishProperty,
-                // PropertyPaneCheckbox('LangChinese', {
-                //   text: "Chinese",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // ChineseProperty,
-                // PropertyPaneCheckbox('LangGerman', {
-                //   text: "German",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // GermanProperty,
-                // PropertyPaneCheckbox('LangEspanol', {
-                //   text: "Espanol",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // EspanolProperty,
-                // PropertyPaneCheckbox('LangFrancais', {
-                //   text: "Francais",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // FrancaisProperty,
-                // PropertyPaneCheckbox('LangPolski', {
-                //   text: "Polski",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // PolskiProperty,
-                // PropertyPaneCheckbox('LangJapanese', {
-                //   text: "Japanese",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // JapaneseProperty,
-                // PropertyPaneCheckbox('LangPortugues', {
-                //   text: "Portugues",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // PortuguesProperty,
-                // PropertyPaneCheckbox('LangRussian', {
-                //   text: "Russian",
-                //   checked: false,
-                //   disabled: false
-                // }),
-                // RussianProperty,
+                PropertyPaneCheckbox('LangEnglish', {
+                  text: "English",
+                  checked: false,
+                  disabled: false
+                }),
+                EnglishProperty,
+                PropertyPaneCheckbox('LangChinese', {
+                  text: "Chinese",
+                  checked: false,
+                  disabled: false
+                }),
+                ChineseProperty,
+                PropertyPaneCheckbox('LangGerman', {
+                  text: "German",
+                  checked: false,
+                  disabled: false
+                }),
+                GermanProperty,
+                PropertyPaneCheckbox('LangSpanish', {
+                  text: "Spanish",
+                  checked: false,
+                  disabled: false
+                }),
+                EspanolProperty,
+                PropertyPaneCheckbox('LangFrench', {
+                  text: "French",
+                  checked: false,
+                  disabled: false
+                }),
+                FrancaisProperty,
+                PropertyPaneCheckbox('LangPolish', {
+                  text: "Polish",
+                  checked: false,
+                  disabled: false
+                }),
+                PolskiProperty,
+                PropertyPaneCheckbox('LangJapanese', {
+                  text: "Japanese",
+                  checked: false,
+                  disabled: false
+                }),
+                JapaneseProperty,
+                PropertyPaneCheckbox('LangPortuguese', {
+                  text: "Portuguese",
+                  checked: false,
+                  disabled: false
+                }),
+                PortuguesProperty,
+                PropertyPaneCheckbox('LangRussian', {
+                  text: "Russian",
+                  checked: false,
+                  disabled: false
+                }),
+                RussianProperty,
 
 
                 // PropertyFieldFilePicker('filePicker1', {
