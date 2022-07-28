@@ -259,11 +259,11 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
     let EnglishProperty: any;
     let ChineseProperty: any;
     let GermanProperty: any;
-    let EspanolProperty: any;
-    let FrancaisProperty: any;
-    let PolskiProperty: any;
+    let SpanishProperty: any;
+    let FrenchProperty: any;
+    let PolishProperty: any;
     let JapaneseProperty: any;
-    let PortuguesProperty: any;
+    let PortugueseProperty: any;
     let RussianProperty: any;
 
     if (this.properties.LangEnglish == true) {
@@ -297,33 +297,33 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
     };
     ////////////////////////////////////////////////////////////
     if (this.properties.LangSpanish == true) {
-      EspanolProperty = PropertyPaneTextField('PolishText', {
+      SpanishProperty = PropertyPaneTextField('SpanishText', {
         label: "",
-        value: this.properties.PolishText
+        value: this.properties.SpanishText
       })
     }
     else {
-      EspanolProperty = ""
+      SpanishProperty = ""
     };
     ////////////////////////////////////////////////////////////
     if (this.properties.LangFrench == true) {
-      FrancaisProperty = PropertyPaneTextField('FrenchText', {
+      FrenchProperty = PropertyPaneTextField('FrenchText', {
         label: "",
         value: this.properties.FrenchText
       })
     }
     else {
-      FrancaisProperty = ""
+      FrenchProperty = ""
     };
     ///////////////////////////////////////////////////////////////
     if (this.properties.LangPolish == true) {
-      PolskiProperty = PropertyPaneTextField('PolishText', {
+      PolishProperty = PropertyPaneTextField('PolishText', {
         label: "",
         value: this.properties.PolishText
       })
     }
     else {
-      PolskiProperty = ""
+      PolishProperty = ""
     };
     //////////////////////////////////////////////////////////////
     if (this.properties.LangJapanese == true) {
@@ -337,13 +337,13 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
     };
     /////////////////////////////////////////////////////////////
     if (this.properties.LangPortuguese == true) {
-      PortuguesProperty = PropertyPaneTextField('PortugueseText', {
+      PortugueseProperty = PropertyPaneTextField('PortugueseText', {
         label: "",
         value: this.properties.PortugueseText
       })
     }
     else {
-      PortuguesProperty = ""
+      PortugueseProperty = ""
     };
     //////////////////////////////////////////////////////////
     if (this.properties.LangRussian == true) {
@@ -396,19 +396,19 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
                   checked: false,
                   disabled: false
                 }),
-                EspanolProperty,
+                SpanishProperty,
                 PropertyPaneCheckbox('LangFrench', {
                   text: "French",
                   checked: false,
                   disabled: false
                 }),
-                FrancaisProperty,
+                FrenchProperty,
                 PropertyPaneCheckbox('LangPolish', {
                   text: "Polish",
                   checked: false,
                   disabled: false
                 }),
-                PolskiProperty,
+                PolishProperty,
                 PropertyPaneCheckbox('LangJapanese', {
                   text: "Japanese",
                   checked: false,
@@ -420,7 +420,7 @@ export default class AtlasLibraryConnectWebPart extends BaseClientSideWebPart<IA
                   checked: false,
                   disabled: false
                 }),
-                PortuguesProperty,
+                PortugueseProperty,
                 PropertyPaneCheckbox('LangRussian', {
                   text: "Russian",
                   checked: false,
